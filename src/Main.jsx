@@ -33,10 +33,12 @@ export default function Main(){
                 <button >Add ingredients</button>
             </form>
 
-            {ingredients.length && <h1 className = "ingredients-title">Ingredients on hand:</h1>}
-                <ul className = "ingredients-list">    
-                    {ingredientsListItem}
-                </ul>
+            {ingredients.length? <section>
+                    <h1 className = "ingredients-title">Ingredients on hand:</h1>
+                    <ul className = "ingredients-list">    
+                        {ingredientsListItem}
+                    </ul>
+                </section>:null}
 
             {ingredients.length > 3 && <section> 
                 <div className = 'get-recipe-container'>
