@@ -78,12 +78,16 @@ HF_ACCESS_TOKEN=your_hugging_face_api_token
 - **ESLint**: For maintaining code quality.
 
 
-## License
+## 🌱 Future Enhancements
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+- Remove an ingredient
+- Save a recipe 
+- Implement a dark mode for better user experience.
+- Make it mobile responsive 
 
-## Acknowledgments
+## 📫 Contact
 
-- Hugging Face for providing the Mistral AI model.
-- Vite for the development environment.
-- Google Fonts for the Inter font used in the app.
+Feel free to reach out if you have questions or want to collaborate!
+
+- **GitHub:** [TanzirR](https://github.com/TanzirR)
+- **Email:** [tanzir.razzaque@northsouth.edu](mailto:tanzir.razzaque@northsouth.edu)
