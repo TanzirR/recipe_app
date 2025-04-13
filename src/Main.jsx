@@ -36,7 +36,7 @@ export default function Main(){
                 <button >Add ingredients</button>
             </form>
 
-            {ingredients.length && < IngredientsList ingredientsLength = {ingredients.length} ingredients = {ingredients} getRecipe = {getRecipe}/>}
+            {ingredients.length? < IngredientsList ingredientsLength = {ingredients.length} ingredients = {ingredients} getRecipe = {getRecipe}/>:null}
 
             <ClaudeRecipe recipe = {showRecipe}/>
             
