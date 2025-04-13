@@ -1,16 +1,18 @@
 import React from "react"
 import IngredientsList from "./components/IngredientsList"
 import ClaudeRecipe from "./components/ClaudeRecipe"
+import { getRecipeFromMistral } from "../ai"
 
 export default function Main(){
     
     const [ingredients, setIngredients] = React.useState([])
-    const [showRecipe, setShowRecipe] = React.useState(false)
 
-    function getRecipe(){
-        setShowRecipe(function(prev){
-            return !prev
-        })
+    //Save the generated recipe in a state
+    const [recipe, setRecipe] = React.useState("")
+
+    async function getRecipe(){
+        const generatedRecipeMarkdown = await getRecipeFromMistral(ingredients)
+        setRecipe(generatedRecipeMarkdown)
     }
 
     function handleSubmit(formData) {
@@ -38,7 +40,7 @@ export default function Main(){
 
             {ingredients.length? < IngredientsList ingredientsLength = {ingredients.length} ingredients = {ingredients} getRecipe = {getRecipe}/>:null}
 
-            <ClaudeRecipe recipe = {showRecipe}/>
+            {recipe && <ClaudeRecipe recipe = {recipe}/>}
             
         </main>
     )
