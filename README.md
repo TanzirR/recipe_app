@@ -31,7 +31,7 @@ Chef Claude is a React-based web application that helps users generate recipes b
 1. Clone the repository:
 
    ```sh
-   git clone <repository-url>
+   git clone https://github.com/TanzirR/recipe_app
    cd recipe_app
    ```
 
