@@ -1,14 +1,17 @@
 import React from "react"
+import IngredientsList from "./components/IngredientsList"
+import ClaudeRecipe from "./components/ClaudeRecipe"
 
 export default function Main(){
     
     const [ingredients, setIngredients] = React.useState([])
-    
-    const ingredientsListItem = ingredients.map(function (ingredient){
-        return <li key = {ingredient}>{ingredient}</li>
-    })
+    const [showRecipe, setShowRecipe] = React.useState(false)
 
-    
+    function getRecipe(){
+        setShowRecipe(function(prev){
+            return !prev
+        })
+    }
 
     function handleSubmit(formData) {
         //Retrive the input from the field
@@ -33,20 +36,10 @@ export default function Main(){
                 <button >Add ingredients</button>
             </form>
 
-            {ingredients.length && <h1 className = "ingredients-title">Ingredients on hand:</h1>}
-                <ul className = "ingredients-list">    
-                    {ingredientsListItem}
-                </ul>
+            {ingredients.length && < IngredientsList ingredientsLength = {ingredients.length} ingredients = {ingredients} getRecipe = {getRecipe}/>}
 
-            {ingredients.length > 3 && <section> 
-                <div className = 'get-recipe-container'>
-                    <div className = 'get-recipe-inner'>
-                        <h2 className = 'get-recipe-heading'>Ready for a recipe?</h2>
-                        <h3 className = "get-recipe-sub">Generate a recipe from your list of ingredients.</h3>
-                    </div>
-                    <button>Get a recipe</button>   
-                </div>
-            </section>}
+            <ClaudeRecipe recipe = {showRecipe}/>
+            
         </main>
     )
 }
