@@ -49,8 +49,7 @@ Chef Claude is a React-based web application that helps users generate recipes b
    npm run dev
    ```
 
-2. Open your browser and navigate to [http://localhost:5173](http://localhost:5173).
-
+2. Open your browser and navigate to the provided local development server URL (e.g., http://localhost:5173)
 3. Add ingredients to the list and click "Get a recipe" to generate a recipe.
 
 ## Environment Variables
